@@ -1,0 +1,72 @@
+[
+  {
+    "id": "email_001_payment_failed",
+    "from": "billing@paysecure.com",
+    "subject": "Payment failed for Invoice #INV-2287",
+    "body": "Your payment for invoice #INV-2287 has failed. The card on file was declined. Please update your payment method within 48 hours to avoid service interruption.",
+    "date": "2026-06-04T16:18:00Z"
+  },
+  {
+    "id": "email_002_server_down",
+    "from": "alerts@aws.amazon.com",
+    "subject": "Server is DOWN - Urgent Action Required",
+    "body": "Your EC2 instance i-0abcd1234 is in a stopped state since 10:15 AM UTC. Production traffic is affected. Immediate action required to restore the service.",
+    "date": "2026-06-04T16:12:00Z"
+  },
+  {
+    "id": "email_003_client_complaint",
+    "from": "support@yourapp.com",
+    "subject": "Urgent: Customer cannot access account",
+    "body": "A customer reported that they cannot login to their account since this morning. They are getting a 403 error and are quite frustrated. This needs urgent attention.",
+    "date": "2026-06-04T16:05:00Z"
+  },
+  {
+    "id": "email_004_interview",
+    "from": "careers@tqtech.ie",
+    "subject": "Interview invitation - Software Engineer 2",
+    "body": "Thank you for your application. We were impressed with your submission and would like to invite you to a technical interview next week. Please share your availability.",
+    "date": "2026-06-04T14:05:00Z"
+  },
+  {
+    "id": "email_005_security",
+    "from": "security@authguard.com",
+    "subject": "Security alert: new login to your account",
+    "body": "We detected a new login to your account from an unrecognized device in a new location. If this was not you, reset your password immediately and review your account.",
+    "date": "2026-06-04T11:40:00Z"
+  },
+  {
+    "id": "email_006_billing_overdue",
+    "from": "billing@cloudhost.io",
+    "subject": "Invoice INV-0481 is overdue",
+    "body": "This is a reminder that invoice INV-0481 for your monthly hosting plan is now past due. Please settle the outstanding balance to avoid a billing issue and suspension.",
+    "date": "2026-06-03T16:40:00Z"
+  },
+  {
+    "id": "email_007_subscription",
+    "from": "noreply@saasapp.com",
+    "subject": "Subscription renewal successful",
+    "body": "Your subscription has been renewed successfully. Thank you for your business. No action is needed. Your next renewal date is July 4, 2026.",
+    "date": "2026-06-03T09:30:00Z"
+  },
+  {
+    "id": "email_008_newsletter",
+    "from": "newsletter@techweekly.com",
+    "subject": "Weekly newsletter - June 2026",
+    "body": "This week in tech: AI breakthroughs, new developer tools, and industry insights. Plus a special discount on our annual plan. You can unsubscribe anytime.",
+    "date": "2026-06-02T08:00:00Z"
+  },
+  {
+    "id": "email_009_spam",
+    "from": "rewards@luckydraw-prizes.net",
+    "subject": "Congratulations WINNER! Claim your prize now",
+    "body": "You have been selected as a lottery winner! Claim prize within 24 hours to receive free money and a crypto giveaway. This is a once in a lifetime offer.",
+    "date": "2026-06-01T22:13:00Z"
+  },
+  {
+    "id": "groq_live_test_15",
+    "sender": "client@vip.com",
+    "subject": "URGENT: Payment Gateway is Failing!",
+    "body": "Hi, our customers cannot complete their transactions. The payment gateway is returning a 500 internal server error. Please fix this immediately, we are losing sales!",
+    "date": "2026-06-05T17:20:00Z"
+  }
+]
