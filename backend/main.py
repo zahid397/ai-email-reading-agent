@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import asyncio
 import logging
 import os
 from contextlib import asynccontextmanager
@@ -19,10 +20,8 @@ from models import ProcessedEmail
 from processor import process_emails
 from schemas import CategoryCount, EmailOut, Stats, TriggerResult
 
-# Load environment variables
 load_dotenv()
 
-# Logging setup
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s | %(levelname)-7s | %(name)s | %(message)s",
@@ -31,25 +30,22 @@ logger = logging.getLogger("email_agent.main")
 
 PORT = int(os.getenv("BACKEND_PORT", 8000))
 
-# CORS Configuration
 def _cors_origins() -> list[str]:
-    # Make sure Vercel frontend URL is added here via environment variable
-    raw = os.getenv("BACKEND_CORS_ORIGINS", "http://localhost:3000,https://ai-email-reading-agent.vercel.app")
+    raw = os.getenv("BACKEND_CORS_ORIGINS", "http://localhost:3000")
     return [origin.strip() for origin in raw.split(",") if origin.strip()]
 
 scheduler = AsyncIOScheduler()
 
 async def _scheduled_job() -> None:
     try:
-        logger.info("Running scheduled email processing...")
         await process_emails()
     except Exception as exc:
         logger.error("Scheduled processing job errored: %s", exc)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
-    # Initialize DB and start scheduler
     await init_db()
+    await _scheduled_job()
     if not scheduler.running:
         scheduler.start()
         scheduler.add_job(
@@ -79,7 +75,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Endpoints
 @app.get("/health")
 async def health() -> dict[str, str]:
     return {"status": "ok"}
